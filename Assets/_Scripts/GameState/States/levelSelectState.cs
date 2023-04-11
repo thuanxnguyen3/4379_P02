@@ -7,6 +7,7 @@ public class levelSelectState : GameBaseState
     public override void EnterState(GameStateManager game, GameController controller)
     {
         controller.showLevelSelect();
+        CurrentStateData.currentState = this;
     }
 
     public override void ExitState(GameStateManager game, GameController controller)

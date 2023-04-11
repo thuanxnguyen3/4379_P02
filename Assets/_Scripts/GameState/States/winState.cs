@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playState : GameBaseState
+public class winState : GameBaseState
 {
     public override void EnterState(GameStateManager game, GameController controller)
     {
-        Debug.Log("load play state");
-        CurrentStateData.currentState = this;
+        throw new System.NotImplementedException();
     }
 
     public override void ExitState(GameStateManager game, GameController controller)
@@ -22,10 +21,6 @@ public class playState : GameBaseState
 
     public override void UpdateState(GameStateManager game, GameController controller)
     {
-        if (controller.toWinState == true)
-        {
-            game.LeaveState(game.playState);
-            game.SwitchState(game.winState);
-        }
+        throw new System.NotImplementedException();
     }
 }
