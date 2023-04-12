@@ -5,31 +5,32 @@ using UnityEngine;
 public class CamaraController : MonoBehaviour
 {
 
-    public GameObject player;
+    //public GameObject player;
 
-    private Vector3 playerOffset;
+    public Transform player;
+
+    public Vector3 playerOffset;
+
+    public float cameraSmooth = 0.3f;
 
     // Use this for initialization
+    private Vector3 velocity = Vector3.zero;
 
     void Start()
-
     {
 
-        playerOffset = transform.position - player.transform.position; // distance from camera
 
     }
-
-
-
     // Update is called once per frame
 
-    void Update()
-
+    void FixedUpdate() // FIXEDupdate will run after update will reduce camera jitter. 
     {
 
-        transform.LookAt(player.transform);
+        Vector3 wantedPosition = player.position + playerOffset;
+        Vector3 smoothedPosition = Vector3.SmoothDamp(transform.position, wantedPosition, ref velocity, cameraSmooth);
+        transform.position = smoothedPosition;
 
-        transform.position = player.transform.position + playerOffset;
+        transform.LookAt(player);
 
     }
 
