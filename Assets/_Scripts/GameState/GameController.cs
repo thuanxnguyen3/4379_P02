@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
     public void toMenuState()
     {
         SceneManager.LoadScene("Main");
-        CurrentStateData.toMenuState = true;
+        CurrentStateData.toMenuState = false;
         CurrentStateData.toWinState = false;
         CurrentStateData.toLevelSelectState= false;
         CurrentStateData.toPauseState= false;

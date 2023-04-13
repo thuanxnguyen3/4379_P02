@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playState : GameBaseState
 {
@@ -8,6 +9,7 @@ public class playState : GameBaseState
     {
         Debug.Log("load play state");
         CurrentStateData.currentState = this;
+        SceneManager.LoadScene(GameData.selectedLevel);
     }
 
     public override void ExitState(GameStateManager game, GameController controller)
@@ -16,12 +18,11 @@ public class playState : GameBaseState
         CurrentStateData.toPlayState= false;
     }
 
-
     public override void UpdateState(GameStateManager game, GameController controller)
     {
         if (CurrentStateData.toWinState == true)
         {
-            game.LeaveState(game.playState);
+            ExitState(game, controller);
             game.SwitchState(game.winState);
         }
     }

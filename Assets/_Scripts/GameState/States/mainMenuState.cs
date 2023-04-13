@@ -19,12 +19,12 @@ public class mainMenuState : GameBaseState
     {
         if (CurrentStateData.toLevelSelectState == true)
         {
-            game.LeaveState(game.menuState);
+            ExitState(game, controller);
             game.SwitchState(game.selectState);
         }
         if(CurrentStateData.toPlayState== true)
         {
-            game.LeaveState(game.menuState);
+            ExitState(game, controller);
             game.SwitchState(game.playState);
         }
     }

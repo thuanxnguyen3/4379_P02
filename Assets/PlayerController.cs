@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
         pause = buttonControl.UI.Pause;
         quit= buttonControl.UI.Quit;
         startGame = buttonControl.UI.Start;
+        levelSelect = buttonControl.UI.LevelSelect;
 
 
         mainMenu.Enable();

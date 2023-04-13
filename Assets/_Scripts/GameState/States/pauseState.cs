@@ -24,7 +24,7 @@ public class pauseState : GameBaseState
     {
         if (CurrentStateData.toPlayState == true)
         {
-            game.LeaveState(game.pauseState);
+            ExitState(game, controller);
             game.SwitchState(game.playState);
         }
     }

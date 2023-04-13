@@ -16,7 +16,8 @@ public class GameStateManager : MonoBehaviour
     void Start()
     {
         gameController = this.GetComponent<GameController>();
-        currentState = CurrentStateData.currentState;
+        currentState = menuState;
+        CurrentStateData.currentState = currentState;
         //Debug.Log("start");
 
         currentState.EnterState(this, gameController);

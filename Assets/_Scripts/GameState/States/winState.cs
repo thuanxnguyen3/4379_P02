@@ -21,7 +21,7 @@ public class winState : GameBaseState
     {
         if (CurrentStateData.toMenuState == true)
         {
-            game.LeaveState(game.winState);
+            ExitState(game, controller);
             game.SwitchState(game.menuState);
         }
     }
