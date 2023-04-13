@@ -6,14 +6,9 @@ public class GameController : MonoBehaviour
 {
     [Header("UI")]
     public GameObject MainMenuUI;
-    public GameObject levelSelectUI;
-    public GameObject pauseMenuUI;
-    public GameObject winMenuUI;
-
-    public void ExitGame()
-    {
-        Application.Quit();
-    }
+    private GameObject levelSelectUI;
+    private GameObject pauseMenuUI;
+    private GameObject winMenuUI;
     public void StartGame()
     {
         CurrentStateData.toPlayState = true;
