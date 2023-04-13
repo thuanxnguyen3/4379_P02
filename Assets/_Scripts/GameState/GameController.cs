@@ -8,23 +8,27 @@ public class GameController : MonoBehaviour
     public GameObject MainMenuUI;
     public GameObject levelSelectUI;
     public GameObject pauseMenuUI;
-
-    [Header("StateVariables")]
-    public bool toMenuState = false;
-    public bool toLevelSelectState = false;
-    public bool toPlayState = false;
-    public bool toPauseState = false;
-    public bool toWinState = false;
+    public GameObject winMenuUI;
 
     public void ExitGame()
     {
         Application.Quit();
     }
-
     public void StartGame()
     {
-        toPlayState = true;
+        CurrentStateData.toPlayState = true;
         SceneManager.LoadScene("Level01");
+    }
+
+    //this is a big reset of the game state machine and will bring the player back to the main menu.
+    public void toMenuState()
+    {
+        SceneManager.LoadScene("Main");
+        CurrentStateData.toMenuState = true;
+        CurrentStateData.toWinState = false;
+        CurrentStateData.toLevelSelectState= false;
+        CurrentStateData.toPauseState= false;
+        CurrentStateData.toPlayState= false;
     }
     public void showLevelSelect()
     {
@@ -52,6 +56,15 @@ public class GameController : MonoBehaviour
     }
     public void winState()
     {
-        toWinState = true;
+        CurrentStateData.toWinState = true;
     }
+    public void showWinMenu()
+    {
+        winMenuUI.SetActive(true);
+    }
+    public void hideWinMenu()
+    {
+        winMenuUI.SetActive(false);
+    }
+
 }

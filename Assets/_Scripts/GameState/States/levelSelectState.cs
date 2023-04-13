@@ -13,11 +13,7 @@ public class levelSelectState : GameBaseState
     public override void ExitState(GameStateManager game, GameController controller)
     {
         base.ExitState(game, controller);
-    }
-
-    public override void OnCollisionEnter(GameStateManager game, GameController controller)
-    {
-        base.OnCollisionEnter(game, controller);
+        CurrentStateData.toLevelSelectState = false;
     }
 
     public override void UpdateState(GameStateManager game, GameController controller)

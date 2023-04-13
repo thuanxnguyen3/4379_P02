@@ -8,10 +8,6 @@ public abstract class GameBaseState
 
     public abstract void UpdateState(GameStateManager game, GameController controller);
 
-    public virtual void OnCollisionEnter(GameStateManager game, GameController controller)
-    {
-
-    }
     public virtual void ExitState(GameStateManager game, GameController controller)
     {
 

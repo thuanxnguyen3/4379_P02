@@ -12,17 +12,17 @@ public class mainMenuState : GameBaseState
 
     public override void ExitState(GameStateManager game, GameController controller)
     {
-        controller.toMenuState = false;
+        CurrentStateData.toMenuState = false;
     }
 
     public override void UpdateState(GameStateManager game, GameController controller)
     {
-        if (controller.toLevelSelectState == true)
+        if (CurrentStateData.toLevelSelectState == true)
         {
             game.LeaveState(game.menuState);
             game.SwitchState(game.selectState);
         }
-        if(controller.toPlayState== true)
+        if(CurrentStateData.toPlayState== true)
         {
             game.LeaveState(game.menuState);
             game.SwitchState(game.playState);

@@ -9,15 +9,8 @@ public class GameStateManager : MonoBehaviour
     public mainMenuState menuState = new mainMenuState();
     public levelSelectState selectState = new levelSelectState();
     public playState playState = new playState();
-   // public loseState loseState = new loseState();
     public pauseState pauseState = new pauseState();
     public winState winState = new winState();
-
-
-    //public GameSetupState setupState = new GameSetupState();
-    
-    //public GameLoseState loseState = new GameLoseState();
-    //public GameWinState winState = new GameWinState();*/
 
     private GameController gameController;
     void Start()

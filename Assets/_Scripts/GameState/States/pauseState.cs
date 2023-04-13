@@ -9,16 +9,23 @@ public class pauseState : GameBaseState
         Debug.Log("load pause state");
         CurrentStateData.currentState = this;
         game.stopTheGame();
+        controller.showPauseMenu();
     }
 
     public override void ExitState(GameStateManager game, GameController controller)
     {
         base.ExitState(game, controller);
         game.unpauseTheGame();
+        controller.hidePauseMenu();
+        CurrentStateData.toPauseState= false;
     }
 
     public override void UpdateState(GameStateManager game, GameController controller)
     {
-        throw new System.NotImplementedException();
+        if (CurrentStateData.toPlayState == true)
+        {
+            game.LeaveState(game.pauseState);
+            game.SwitchState(game.playState);
+        }
     }
 }
