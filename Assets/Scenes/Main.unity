@@ -256,6 +256,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0b2516c7809928459eede4d274774db, type: 3}
+--- !u!1 &1096533148 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7929521713008922136, guid: 71e0722ba57ad0247995785f85cea831, type: 3}
+  m_PrefabInstance: {fileID: 5450073876134224536}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1437571334
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,6 +439,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1845178357 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5450073875968214771, guid: 71e0722ba57ad0247995785f85cea831, type: 3}
+  m_PrefabInstance: {fileID: 5450073876134224536}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2096066045
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,7 +486,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb7ff3df7b09ef46966b9fb39ffbe23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenuUI: {fileID: 0}
+  MainMenuUI: {fileID: 1845178357}
+  levelSelectUI: {fileID: 1096533148}
 --- !u!4 &2096066048
 Transform:
   m_ObjectHideFlags: 0

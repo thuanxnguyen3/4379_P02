@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,6 +14,11 @@ public class PlayerController : MonoBehaviour
     private InputAction quit;
     private InputAction levelSelect;
     private InputAction startGame;
+
+
+    private InputAction level01;
+    private InputAction level02;
+    private InputAction level03;
 
     private UIButtons buttonControl;
 
@@ -42,6 +49,20 @@ public class PlayerController : MonoBehaviour
         startGame.performed += toPlayState;
         quit.performed += quitGame;
         levelSelect.performed += levelSelectMenu;
+
+
+
+        level01 = buttonControl.LevelSelect.Level1;
+        level02= buttonControl.LevelSelect.Level2;
+        level03= buttonControl.LevelSelect.Level3;
+
+        level01.Enable();
+        level02.Enable();
+        level03.Enable();
+
+        level01.performed += moveLevel01;
+        level02.performed += moveLevel02;
+        level03.performed += moveLevel03;
     }
     private void OnDisable()
     {
@@ -75,6 +96,21 @@ public class PlayerController : MonoBehaviour
     public void quitGame(InputAction.CallbackContext context)
     {
         Application.Quit();
+    }
+    public void moveLevel01(InputAction.CallbackContext context)
+    {
+        GameData.selectedLevel = "Level01";
+        SceneManager.LoadScene(GameData.selectedLevel);
+    }
+    public void moveLevel02(InputAction.CallbackContext context)
+    {
+        GameData.selectedLevel = "Level02";
+        SceneManager.LoadScene(GameData.selectedLevel);
+    }
+    public void moveLevel03(InputAction.CallbackContext context)
+    {
+        GameData.selectedLevel = "Level03";
+        SceneManager.LoadScene(GameData.selectedLevel);
     }
 
 }

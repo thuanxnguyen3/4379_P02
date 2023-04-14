@@ -6,7 +6,7 @@ public class GameController : MonoBehaviour
 {
     [Header("UI")]
     public GameObject MainMenuUI;
-    private GameObject levelSelectUI;
+    public GameObject levelSelectUI;
     private GameObject pauseMenuUI;
     private GameObject winMenuUI;
     public void StartGame()
@@ -25,13 +25,9 @@ public class GameController : MonoBehaviour
         CurrentStateData.toPauseState= false;
         CurrentStateData.toPlayState= false;
     }
-    public void showLevelSelect()
+    public void toggleLevelSelect()
     {
-        levelSelectUI.SetActive(true);
-    }
-    public void hideLevelSelect()
-    {
-        levelSelectUI.SetActive(false);
+        levelSelectUI.GetComponent<Animator>().SetTrigger("Show Level");
     }
     public void showMainMenu()
     {

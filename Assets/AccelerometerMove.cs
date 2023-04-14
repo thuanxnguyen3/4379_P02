@@ -7,6 +7,7 @@ public class AccelerometerMove : MonoBehaviour
 
     public bool isFlat = true;
     private Rigidbody rigidBody;
+    public float movespeed = 1000f;
 
     private void Start()
     {
@@ -19,7 +20,7 @@ public class AccelerometerMove : MonoBehaviour
         if (isFlat)
             tilt = Quaternion.Euler(90, 0, 0) * tilt; // rotate a vector super quick
 
-        rigidBody.AddForce(tilt);
+        rigidBody.AddForce(tilt.x * movespeed, 0, tilt.z * movespeed);
 
         Debug.DrawRay(transform.position + Vector3.up, tilt, Color.cyan); 
 

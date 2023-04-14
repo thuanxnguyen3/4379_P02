@@ -128,6 +128,94 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Level Select",
+            "id": "dee5a52b-3b9d-43da-a9b5-a26eb1d58c8e",
+            "actions": [
+                {
+                    "name": "Level1",
+                    "type": "Button",
+                    "id": "73e0dd8f-099f-46ec-b88d-3adcd34f01d8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Level2",
+                    "type": "Button",
+                    "id": "7042c076-39ca-4576-8856-bc1f4c105aa3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Level3",
+                    "type": "Button",
+                    "id": "96f391aa-a899-4986-9a28-03f4c8304108",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Close",
+                    "type": "Button",
+                    "id": "6d216466-38e9-437b-8967-22fdfe867624",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "dd50f54d-e4e5-4c18-bdec-14b40e24bcf5",
+                    "path": "<Keyboard>/f1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Level1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8b1d335d-8594-413c-8fc5-09b8e5ec035a",
+                    "path": "<Keyboard>/f2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Level2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4b643141-dfe7-4778-8d31-8a422b4cdaaf",
+                    "path": "<Keyboard>/f3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Level3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ae83f8d1-cd65-4c23-87ab-b68179536c1e",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Close",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

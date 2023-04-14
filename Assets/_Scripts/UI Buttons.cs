@@ -150,6 +150,94 @@ public partial class @UIButtons : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Level Select"",
+            ""id"": ""dee5a52b-3b9d-43da-a9b5-a26eb1d58c8e"",
+            ""actions"": [
+                {
+                    ""name"": ""Level1"",
+                    ""type"": ""Button"",
+                    ""id"": ""73e0dd8f-099f-46ec-b88d-3adcd34f01d8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Level2"",
+                    ""type"": ""Button"",
+                    ""id"": ""7042c076-39ca-4576-8856-bc1f4c105aa3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Level3"",
+                    ""type"": ""Button"",
+                    ""id"": ""96f391aa-a899-4986-9a28-03f4c8304108"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Close"",
+                    ""type"": ""Button"",
+                    ""id"": ""6d216466-38e9-437b-8967-22fdfe867624"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""dd50f54d-e4e5-4c18-bdec-14b40e24bcf5"",
+                    ""path"": ""<Keyboard>/f1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Level1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8b1d335d-8594-413c-8fc5-09b8e5ec035a"",
+                    ""path"": ""<Keyboard>/f2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Level2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4b643141-dfe7-4778-8d31-8a422b4cdaaf"",
+                    ""path"": ""<Keyboard>/f3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Level3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ae83f8d1-cd65-4c23-87ab-b68179536c1e"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Close"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -162,6 +250,12 @@ public partial class @UIButtons : IInputActionCollection2, IDisposable
         m_UI_Pause = m_UI.FindAction("Pause", throwIfNotFound: true);
         m_UI_Resume = m_UI.FindAction("Resume", throwIfNotFound: true);
         m_UI_MainMenu = m_UI.FindAction("MainMenu", throwIfNotFound: true);
+        // Level Select
+        m_LevelSelect = asset.FindActionMap("Level Select", throwIfNotFound: true);
+        m_LevelSelect_Level1 = m_LevelSelect.FindAction("Level1", throwIfNotFound: true);
+        m_LevelSelect_Level2 = m_LevelSelect.FindAction("Level2", throwIfNotFound: true);
+        m_LevelSelect_Level3 = m_LevelSelect.FindAction("Level3", throwIfNotFound: true);
+        m_LevelSelect_Close = m_LevelSelect.FindAction("Close", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -290,6 +384,63 @@ public partial class @UIButtons : IInputActionCollection2, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // Level Select
+    private readonly InputActionMap m_LevelSelect;
+    private ILevelSelectActions m_LevelSelectActionsCallbackInterface;
+    private readonly InputAction m_LevelSelect_Level1;
+    private readonly InputAction m_LevelSelect_Level2;
+    private readonly InputAction m_LevelSelect_Level3;
+    private readonly InputAction m_LevelSelect_Close;
+    public struct LevelSelectActions
+    {
+        private @UIButtons m_Wrapper;
+        public LevelSelectActions(@UIButtons wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Level1 => m_Wrapper.m_LevelSelect_Level1;
+        public InputAction @Level2 => m_Wrapper.m_LevelSelect_Level2;
+        public InputAction @Level3 => m_Wrapper.m_LevelSelect_Level3;
+        public InputAction @Close => m_Wrapper.m_LevelSelect_Close;
+        public InputActionMap Get() { return m_Wrapper.m_LevelSelect; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(LevelSelectActions set) { return set.Get(); }
+        public void SetCallbacks(ILevelSelectActions instance)
+        {
+            if (m_Wrapper.m_LevelSelectActionsCallbackInterface != null)
+            {
+                @Level1.started -= m_Wrapper.m_LevelSelectActionsCallbackInterface.OnLevel1;
+                @Level1.performed -= m_Wrapper.m_LevelSelectActionsCallbackInterface.OnLevel1;
+                @Level1.canceled -= m_Wrapper.m_LevelSelectActionsCallbackInterface.OnLevel1;
+                @Level2.started -= m_Wrapper.m_LevelSelectActionsCallbackInterface.OnLevel2;
+                @Level2.performed -= m_Wrapper.m_LevelSelectActionsCallbackInterface.OnLevel2;
+                @Level2.canceled -= m_Wrapper.m_LevelSelectActionsCallbackInterface.OnLevel2;
+                @Level3.started -= m_Wrapper.m_LevelSelectActionsCallbackInterface.OnLevel3;
+                @Level3.performed -= m_Wrapper.m_LevelSelectActionsCallbackInterface.OnLevel3;
+                @Level3.canceled -= m_Wrapper.m_LevelSelectActionsCallbackInterface.OnLevel3;
+                @Close.started -= m_Wrapper.m_LevelSelectActionsCallbackInterface.OnClose;
+                @Close.performed -= m_Wrapper.m_LevelSelectActionsCallbackInterface.OnClose;
+                @Close.canceled -= m_Wrapper.m_LevelSelectActionsCallbackInterface.OnClose;
+            }
+            m_Wrapper.m_LevelSelectActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Level1.started += instance.OnLevel1;
+                @Level1.performed += instance.OnLevel1;
+                @Level1.canceled += instance.OnLevel1;
+                @Level2.started += instance.OnLevel2;
+                @Level2.performed += instance.OnLevel2;
+                @Level2.canceled += instance.OnLevel2;
+                @Level3.started += instance.OnLevel3;
+                @Level3.performed += instance.OnLevel3;
+                @Level3.canceled += instance.OnLevel3;
+                @Close.started += instance.OnClose;
+                @Close.performed += instance.OnClose;
+                @Close.canceled += instance.OnClose;
+            }
+        }
+    }
+    public LevelSelectActions @LevelSelect => new LevelSelectActions(this);
     public interface IUIActions
     {
         void OnStart(InputAction.CallbackContext context);
@@ -298,5 +449,12 @@ public partial class @UIButtons : IInputActionCollection2, IDisposable
         void OnPause(InputAction.CallbackContext context);
         void OnResume(InputAction.CallbackContext context);
         void OnMainMenu(InputAction.CallbackContext context);
+    }
+    public interface ILevelSelectActions
+    {
+        void OnLevel1(InputAction.CallbackContext context);
+        void OnLevel2(InputAction.CallbackContext context);
+        void OnLevel3(InputAction.CallbackContext context);
+        void OnClose(InputAction.CallbackContext context);
     }
 }
