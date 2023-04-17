@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameStateManager : MonoBehaviour
 {
     GameBaseState currentState;
+    [SerializeField] AudioClip _backgroundMusic;
 
     public mainMenuState menuState = new mainMenuState();
     public levelSelectState selectState = new levelSelectState();
@@ -19,7 +20,10 @@ public class GameStateManager : MonoBehaviour
         currentState = menuState;
         CurrentStateData.currentState = currentState;
         //Debug.Log("start");
-
+        if (_backgroundMusic != null)
+        {
+            AudioManager.Instance.PlaySong(_backgroundMusic);
+        }
         currentState.EnterState(this, gameController);
     }
     void Update()
