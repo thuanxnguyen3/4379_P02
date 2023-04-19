@@ -42,12 +42,15 @@ public class PlayerController : MonoBehaviour
         quit.Enable();
         levelSelect.Enable();
         startGame.Enable();
+        resume.Enable();
 
 
         mainMenu.performed += openMainMenu;
         resume.performed += toPlayState;
         startGame.performed += toPlayState;
         quit.performed += quitGame;
+        pause.performed += pauseMenu;
+        resume.performed += resumeGame;
         levelSelect.performed += levelSelectMenu;
 
 
@@ -92,7 +95,14 @@ public class PlayerController : MonoBehaviour
     {
         CurrentStateData.toLevelSelectState = true;
     }
-
+    public void pauseMenu(InputAction.CallbackContext context)
+    {
+        CurrentStateData.toPauseState= true;
+    }
+    public void resumeGame()
+    {
+        CurrentStateData.toPlayState = true;
+    }
     public void quitGame(InputAction.CallbackContext context)
     {
         Application.Quit();

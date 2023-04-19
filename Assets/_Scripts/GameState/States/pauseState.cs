@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class pauseState : GameBaseState
 {
@@ -8,15 +9,15 @@ public class pauseState : GameBaseState
     {
         Debug.Log("load pause state");
         CurrentStateData.currentState = this;
-        game.stopTheGame();
-        controller.showPauseMenu();
+        controller.togglePauseMenu();
+        Time.timeScale= 0;
     }
 
     public override void ExitState(GameStateManager game, GameController controller)
     {
         base.ExitState(game, controller);
-        game.unpauseTheGame();
-        controller.hidePauseMenu();
+        controller.togglePauseMenu();
+        Time.timeScale = 1f;
         CurrentStateData.toPauseState= false;
     }
 
@@ -26,6 +27,12 @@ public class pauseState : GameBaseState
         {
             ExitState(game, controller);
             game.SwitchState(game.playState);
+        }
+        if(CurrentStateData.toMenuState== true)
+        {
+            ExitState(game, controller);
+            game.SwitchState(game.menuState);
+            SceneManager.LoadScene("Main");
         }
     }
 }

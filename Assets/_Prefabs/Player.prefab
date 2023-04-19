@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFlat: 1
+  movespeed: 1000
 --- !u!1 &2948612685559806519
 GameObject:
   m_ObjectHideFlags: 0

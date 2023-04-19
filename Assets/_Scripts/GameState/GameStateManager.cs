@@ -16,6 +16,7 @@ public class GameStateManager : MonoBehaviour
     private GameController gameController;
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
         gameController = this.GetComponent<GameController>();
         currentState = menuState;
         CurrentStateData.currentState = currentState;
@@ -41,13 +42,4 @@ public class GameStateManager : MonoBehaviour
     {
         state.ExitState(this, gameController);
     }
-    public void stopTheGame()
-    {
-        Time.timeScale = 0;
-    }
-    public void unpauseTheGame()
-    {
-        Time.timeScale = 1.0f;
-    }
-
 }

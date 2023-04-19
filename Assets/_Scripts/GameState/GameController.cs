@@ -7,8 +7,9 @@ public class GameController : MonoBehaviour
     [Header("UI")]
     public GameObject MainMenuUI;
     public GameObject levelSelectUI;
-    private GameObject pauseMenuUI;
+    public GameObject pauseMenuUI;
     private GameObject winMenuUI;
+    
     public void StartGame()
     {
         CurrentStateData.toPlayState = true;
@@ -29,6 +30,10 @@ public class GameController : MonoBehaviour
     {
         levelSelectUI.GetComponent<Animator>().SetTrigger("Show Level");
     }
+    public void togglePauseMenu()
+    {
+        pauseMenuUI.GetComponent<Animator>().SetTrigger("Show Pause");
+    }
     public void showMainMenu()
     {
         SceneManager.LoadScene("Main");
@@ -36,14 +41,6 @@ public class GameController : MonoBehaviour
     public void hideMainMenu()
     {
         MainMenuUI.SetActive(false);
-    }
-    public void showPauseMenu()
-    {
-        pauseMenuUI.SetActive(true);
-    }
-    public void hidePauseMenu()
-    {
-        pauseMenuUI.SetActive(false);
     }
     public void winState()
     {
@@ -57,5 +54,4 @@ public class GameController : MonoBehaviour
     {
         winMenuUI.SetActive(false);
     }
-
 }
