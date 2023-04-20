@@ -14,9 +14,25 @@ public class GameStateManager : MonoBehaviour
     public winState winState = new winState();
 
     private GameController gameController;
+
+    public static GameObject Instance = null;
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            // doesn't exist yet, this is now our singleton!
+            Instance = this.gameObject;
+            DontDestroyOnLoad(this);
+            //fill references
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+
         gameController = this.GetComponent<GameController>();
         currentState = menuState;
         CurrentStateData.currentState = currentState;

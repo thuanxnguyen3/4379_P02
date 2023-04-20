@@ -15,8 +15,6 @@ public class winState : GameBaseState
     {
         CurrentStateData.toWinState = false;
     }
-
-
     public override void UpdateState(GameStateManager game, GameController controller)
     {
         if (CurrentStateData.toMenuState == true)

@@ -9,13 +9,12 @@ public class mainMenuState : GameBaseState
     {
         Debug.Log("MainMenuLoad");
         CurrentStateData.currentState = this;
+        controller.MainMenuUI.SetActive(true);
     }
-
     public override void ExitState(GameStateManager game, GameController controller)
     {
         CurrentStateData.toMenuState = false;
     }
-
     public override void UpdateState(GameStateManager game, GameController controller)
     {
         if (CurrentStateData.toLevelSelectState == true)
@@ -27,6 +26,7 @@ public class mainMenuState : GameBaseState
         {
             ExitState(game, controller);
             game.SwitchState(game.playState);
+            controller.MainMenuUI.SetActive(false);
         }
     }
 }

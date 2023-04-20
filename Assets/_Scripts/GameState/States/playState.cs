@@ -9,7 +9,10 @@ public class playState : GameBaseState
     {
         Debug.Log("load play state");
         CurrentStateData.currentState = this;
-        SceneManager.LoadScene(GameData.selectedLevel);
+        if (CurrentStateData.fromPauseState == false)
+        {
+            SceneManager.LoadScene(GameData.selectedLevel);
+        }
     }
 
     public override void ExitState(GameStateManager game, GameController controller)

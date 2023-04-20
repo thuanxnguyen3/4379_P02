@@ -9,7 +9,16 @@ public class GameController : MonoBehaviour
     public GameObject levelSelectUI;
     public GameObject pauseMenuUI;
     private GameObject winMenuUI;
-    
+
+    private void Awake()
+    {
+       // Instantiate(pauseMenuUI);
+        //Instantiate(levelSelectUI);
+    }
+    public void Update()
+    {
+       // Debug.Log(CurrentStateData.toPauseState);
+    }
     public void StartGame()
     {
         CurrentStateData.toPlayState = true;

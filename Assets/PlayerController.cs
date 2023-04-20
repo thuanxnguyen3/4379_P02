@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
 
     private UIButtons buttonControl;
 
+
     private void Awake()
     {
         buttonControl = new UIButtons();
@@ -84,6 +85,7 @@ public class PlayerController : MonoBehaviour
     public void openMainMenu(InputAction.CallbackContext context)
     {
         CurrentStateData.toMenuState = true;
+        resetStates();
     }
 
     public void resumeGame(InputAction.CallbackContext context)
@@ -110,17 +112,24 @@ public class PlayerController : MonoBehaviour
     public void moveLevel01(InputAction.CallbackContext context)
     {
         GameData.selectedLevel = "Level01";
-        SceneManager.LoadScene(GameData.selectedLevel);
+        CurrentStateData.toPlayState = true;
     }
     public void moveLevel02(InputAction.CallbackContext context)
     {
         GameData.selectedLevel = "Level02";
-        SceneManager.LoadScene(GameData.selectedLevel);
+        CurrentStateData.toPlayState = true;
     }
     public void moveLevel03(InputAction.CallbackContext context)
     {
         GameData.selectedLevel = "Level03";
-        SceneManager.LoadScene(GameData.selectedLevel);
+        CurrentStateData.toPlayState= true;
+    }
+    public void resetStates()
+    {
+        CurrentStateData.toLevelSelectState = false;
+        CurrentStateData.toPauseState = false;
+        CurrentStateData.toPlayState = false;
+        CurrentStateData.toWinState = false;
     }
 
 }

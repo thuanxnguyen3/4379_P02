@@ -11,6 +11,7 @@ public class pauseState : GameBaseState
         CurrentStateData.currentState = this;
         controller.togglePauseMenu();
         Time.timeScale= 0;
+        CurrentStateData.fromPauseState= true;
     }
 
     public override void ExitState(GameStateManager game, GameController controller)
@@ -19,6 +20,7 @@ public class pauseState : GameBaseState
         controller.togglePauseMenu();
         Time.timeScale = 1f;
         CurrentStateData.toPauseState= false;
+        
     }
 
     public override void UpdateState(GameStateManager game, GameController controller)
@@ -32,7 +34,7 @@ public class pauseState : GameBaseState
         {
             ExitState(game, controller);
             game.SwitchState(game.menuState);
-            SceneManager.LoadScene("Main");
+            CurrentStateData.fromPauseState = false;
         }
     }
 }

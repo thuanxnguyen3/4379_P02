@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DontDestroy : MonoBehaviour
+public class DontDestroy02 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    private static GameObject Instance1 = null;
+    private static GameObject Instance2 = null;
     private void Awake()
     {
-        if (Instance1 == null)
+        if (Instance2 == null)
         {
             // doesn't exist yet, this is now our singleton!
-            Instance1 = this.gameObject;
+            Instance2 = this.gameObject;
             DontDestroyOnLoad(this);
             //fill references
         }

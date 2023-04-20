@@ -13,4 +13,6 @@ public static class CurrentStateData
     public static bool toPauseState = false;
     public static bool toWinState = false;
 
+    public static bool fromPauseState = false;
+
 }
