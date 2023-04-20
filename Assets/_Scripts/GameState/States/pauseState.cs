@@ -20,9 +20,7 @@ public class pauseState : GameBaseState
         controller.togglePauseMenu();
         Time.timeScale = 1f;
         CurrentStateData.toPauseState= false;
-        
     }
-
     public override void UpdateState(GameStateManager game, GameController controller)
     {
         if (CurrentStateData.toPlayState == true)

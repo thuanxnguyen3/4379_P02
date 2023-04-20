@@ -16,7 +16,6 @@ public class levelSelectState : GameBaseState
         base.ExitState(game, controller);
         controller.toggleLevelSelect();
         CurrentStateData.toLevelSelectState = false;
-        
     }
 
     public override void UpdateState(GameStateManager game, GameController controller)
@@ -30,6 +29,7 @@ public class levelSelectState : GameBaseState
         {
             ExitState(game, controller);
             game.SwitchState(game.playState);
+            GameObject.Find("LevelSelectUI").transform.localPosition = Vector3.zero;
             controller.MainMenuUI.SetActive(false);
         }
     }

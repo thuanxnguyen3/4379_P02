@@ -26,6 +26,7 @@ public class mainMenuState : GameBaseState
         {
             ExitState(game, controller);
             game.SwitchState(game.playState);
+            GameObject.Find("LevelSelectUI").transform.localPosition = Vector3.zero;
             controller.MainMenuUI.SetActive(false);
         }
     }
