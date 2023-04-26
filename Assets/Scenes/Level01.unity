@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.37547052, g: 0.6141295, b: 0.86671376, a: 1}
+  m_IndirectSpecularColor: {r: 0.37577036, g: 0.61430645, b: 0.8670546, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 329716472}
   - component: {fileID: 329716471}
   - component: {fileID: 329716470}
+  - component: {fileID: 329716474}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -264,6 +265,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &329716474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329716469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98f9126253cd29249ae61ef8ac7c8a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &515356162
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,8 +339,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b298a846993b80441a43ea13022e1eea, type: 2}
+  m_sharedMaterial: {fileID: -3965681173596675563, guid: b298a846993b80441a43ea13022e1eea, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -839,6 +852,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2396371657973499803, guid: 816296bfea6b1354a9cbc110783db809, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334345772401352727, guid: 816296bfea6b1354a9cbc110783db809, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8334345772855053168, guid: 816296bfea6b1354a9cbc110783db809, type: 3}
       propertyPath: moveForce
       value: 150
