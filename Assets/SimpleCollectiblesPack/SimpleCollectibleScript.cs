@@ -39,6 +39,7 @@ public class SimpleCollectibleScript : MonoBehaviour {
 			count += 10;
 			PlayerPrefs.SetInt("Score", count);
 			text.text = count.ToString();
+			Destroy(gameObject);
 		}
 	}
 }
