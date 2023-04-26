@@ -16,7 +16,7 @@ public class SimpleCollectibleScript : MonoBehaviour {
 
 	public AudioClip collectSound;
 
-	public GameObject collectEffect;
+	//public GameObject collectEffect;
 
 	public GameObject scoreText;
 	public int scoreVal;
@@ -45,8 +45,8 @@ public class SimpleCollectibleScript : MonoBehaviour {
 	{
 		if(collectSound)
 			AudioSource.PlayClipAtPoint(collectSound, transform.position);
-		if(collectEffect)
-			Instantiate(collectEffect, transform.position, Quaternion.identity);
+		//if(collectEffect)
+			//Instantiate(collectEffect, transform.position, Quaternion.identity);
 
 		//Below is space to add in your code for what happens based on the collectible type
 
