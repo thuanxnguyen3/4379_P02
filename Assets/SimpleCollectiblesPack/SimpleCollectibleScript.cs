@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
 public class SimpleCollectibleScript : MonoBehaviour {
@@ -16,6 +17,9 @@ public class SimpleCollectibleScript : MonoBehaviour {
 	public AudioClip collectSound;
 
 	public GameObject collectEffect;
+
+	public GameObject scoreText;
+	public int scoreVal;
 
 	// Use this for initialization
 	void Start () {
@@ -48,7 +52,8 @@ public class SimpleCollectibleScript : MonoBehaviour {
 
 		if (CollectibleType == CollectibleTypes.NoType) {
 
-			//Add in code here;
+			scoreVal += 10;
+			scoreText.GetComponent<Text>().text = "Score: " + scoreVal;
 
 			Debug.Log ("Do NoType Command");
 		}
