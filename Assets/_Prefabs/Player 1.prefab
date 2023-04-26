@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2189052726593961375}
   - component: {fileID: 2268900054412497957}
   - component: {fileID: 4048995876632966774}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player Input System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 8334345772401352722}
   - component: {fileID: 8334345772401352749}
   - component: {fileID: 8334345772855053168}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8334345773174734226}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player 1
   m_TagString: Player
   m_Icon: {fileID: 0}

@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinCollider : MonoBehaviour
 {
-
-    private void OnCollisionEnter(Collision collision)
+    public string moveToLevel;
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.tag == "Player 1")
+        if (other.gameObject.tag == "Player")
         {
-            CurrentStateData.toWinState= true;
+            GameData.currentLevel = moveToLevel;
+            SceneManager.LoadScene(moveToLevel);
         }
     }
 }

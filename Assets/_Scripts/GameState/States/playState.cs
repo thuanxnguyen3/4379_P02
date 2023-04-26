@@ -12,6 +12,7 @@ public class playState : GameBaseState
         if (CurrentStateData.fromPauseState == false)
         {
             SceneManager.LoadScene(GameData.selectedLevel);
+            GameData.currentLevel = GameData.selectedLevel;
         }
     }
 

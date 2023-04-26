@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.37577036, g: 0.61430645, b: 0.8670546, a: 1}
+  m_IndirectSpecularColor: {r: 0.37577042, g: 0.6143065, b: 0.86705476, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -284,6 +284,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1297829045877774819, guid: a5bdd039759b08a4e893098bb03f99d0, type: 3}
+      propertyPath: moveToLevel
+      value: Level03
+      objectReference: {fileID: 0}
     - target: {fileID: 1341533584290441618, guid: a5bdd039759b08a4e893098bb03f99d0, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -343,6 +347,10 @@ PrefabInstance:
     - target: {fileID: 1341533584290441619, guid: a5bdd039759b08a4e893098bb03f99d0, type: 3}
       propertyPath: m_Name
       value: Goal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973392279022264132, guid: a5bdd039759b08a4e893098bb03f99d0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5bdd039759b08a4e893098bb03f99d0, type: 3}
@@ -1114,7 +1122,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1583383592398668310, guid: 816296bfea6b1354a9cbc110783db809, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 816296bfea6b1354a9cbc110783db809, type: 3}
 --- !u!1 &1775830052
 GameObject:
