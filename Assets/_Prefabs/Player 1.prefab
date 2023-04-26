@@ -224,9 +224,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   groundCheckRadius: 100
-  maxSpeed: 75
-  moveForce: 50
-  victoryForce: 15
+  maxSpeed: 500
+  moveForce: 200
+  victoryForce: 25
 --- !u!1 &8334345773174734227
 GameObject:
   m_ObjectHideFlags: 0
