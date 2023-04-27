@@ -11,7 +11,15 @@ public class WinCollider : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             GameData.currentLevel = moveToLevel;
-            SceneManager.LoadScene(moveToLevel);
+            if(moveToLevel == "Level03")
+            {
+                CurrentStateData.toMenuState = true;
+            }
+            else
+            {
+                SceneManager.LoadScene(moveToLevel);
+            }
+            
         }
     }
 }

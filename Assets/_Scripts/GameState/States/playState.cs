@@ -33,5 +33,10 @@ public class playState : GameBaseState
             ExitState(game, controller);
             game.SwitchState(game.pauseState);
         }
+        if(CurrentStateData.toMenuState== true)
+        {
+            ExitState(game, controller);
+            game.SwitchState(game.menuState);
+        }
     }
 }
