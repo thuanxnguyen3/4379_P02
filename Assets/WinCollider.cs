@@ -11,7 +11,7 @@ public class WinCollider : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             GameData.currentLevel = moveToLevel;
-            if(moveToLevel == "Level03")
+            if(moveToLevel == "Level04")
             {
                 CurrentStateData.toMenuState = true;
             }
