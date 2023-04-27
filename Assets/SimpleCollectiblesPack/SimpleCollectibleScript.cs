@@ -3,43 +3,46 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
+
 
 [RequireComponent(typeof(AudioSource))]
-public class SimpleCollectibleScript : MonoBehaviour {
+public class SimpleCollectibleScript : MonoBehaviour
+{
 
 	public bool rotate; // do you want it to rotate?
 
 	public float rotationSpeed;
 
-	public AudioSource collectSound;
+	public static event Action OnCollected;
 
 	//public GameObject collectEffect;
 
-	public TextMeshProUGUI text;
-	public int count;
-
 	// Use this for initialization
-	void Start () {
-		PlayerPrefs.SetInt("Score", 0);
-
-	}
 
 	// Update is called once per frame
-	void Update () {
+	void Update()
+	{
 
 		if (rotate)
-			transform.Rotate (Vector3.up * rotationSpeed * Time.deltaTime, Space.World);
+			transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime, Space.World);
 
 	}
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.CompareTag("Player")) {
+		if (other.CompareTag("Player"))
+		{
+			OnCollected?.Invoke();
+			/*
 			collectSound.Play();
 			count += 10;
 			PlayerPrefs.SetInt("Score", count);
 			text.text = count.ToString();
 			Destroy(gameObject);
+			*/
+			Destroy(gameObject);
+
 		}
 	}
 }
