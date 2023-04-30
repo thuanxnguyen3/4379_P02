@@ -24,6 +24,7 @@ public class PlayerMoveController : MonoBehaviour
 
     [SerializeField]
     private LayerMask whatIsGround;
+
     [SerializeField]
     private float groundCheckRadius;
 

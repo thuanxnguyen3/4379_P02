@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.37577036, g: 0.61430645, b: 0.8670546, a: 1}
+  m_IndirectSpecularColor: {r: 0.37547052, g: 0.6141295, b: 0.86671376, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -167,7 +167,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5103214899182151997, guid: 3be4aecdbbc2c404da14438777651535, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5103214899182151997, guid: 3be4aecdbbc2c404da14438777651535, type: 3}
       propertyPath: m_LocalScale.x
@@ -536,8 +536,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score: '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b298a846993b80441a43ea13022e1eea, type: 2}
-  m_sharedMaterial: {fileID: -3965681173596675563, guid: b298a846993b80441a43ea13022e1eea, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -624,7 +624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1341533584290441618, guid: a5bdd039759b08a4e893098bb03f99d0, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1341533584290441618, guid: a5bdd039759b08a4e893098bb03f99d0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1057,9 +1057,29 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8334345772401352721, guid: 816296bfea6b1354a9cbc110783db809, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334345772401352722, guid: 816296bfea6b1354a9cbc110783db809, type: 3}
+      propertyPath: m_Drag
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334345772401352722, guid: 816296bfea6b1354a9cbc110783db809, type: 3}
+      propertyPath: m_Mass
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334345772401352722, guid: 816296bfea6b1354a9cbc110783db809, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 8334345772401352727, guid: 816296bfea6b1354a9cbc110783db809, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334345772855053168, guid: 816296bfea6b1354a9cbc110783db809, type: 3}
+      propertyPath: maxSpeed
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8334345772855053168, guid: 816296bfea6b1354a9cbc110783db809, type: 3}
       propertyPath: moveForce
@@ -1647,6 +1667,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9036841442800862345, guid: 782b4ee7d425f9e4f8e2623b49164fb6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9036841442800862346, guid: 782b4ee7d425f9e4f8e2623b49164fb6, type: 3}
+      propertyPath: useFloorNormal
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -34,6 +34,9 @@ public class CameraMoveController : MonoBehaviour
     [SerializeField]
     private bool useFloorNormal;
 
+    [SerializeField]
+    public float moveSpeed = 4;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,7 +53,7 @@ public class CameraMoveController : MonoBehaviour
             verticalTilt = Input.acceleration.y;
             horizontalTilt = Input.acceleration.x;
 
-            player.Move(verticalTilt, horizontalTilt, transform.right);
+            player.Move(verticalTilt * moveSpeed, horizontalTilt * moveSpeed, transform.right ); // Will multiplay the inputs by moveSpeed
         }
     }
 
