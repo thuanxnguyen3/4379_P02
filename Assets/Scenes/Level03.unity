@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.37577042, g: 0.6143065, b: 0.86705476, a: 1}
+  m_IndirectSpecularColor: {r: 0.37577036, g: 0.61430645, b: 0.8670546, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -217,7 +217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8334345773174734226, guid: 816296bfea6b1354a9cbc110783db809, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8334345773174734226, guid: 816296bfea6b1354a9cbc110783db809, type: 3}
       propertyPath: m_LocalPosition.x
@@ -676,7 +676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1341533584290441618, guid: a5bdd039759b08a4e893098bb03f99d0, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1341533584290441618, guid: a5bdd039759b08a4e893098bb03f99d0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2295,7 +2295,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4058921594629834845, guid: bf048b168cc39434aba3b5c4f091d425, type: 3}
       propertyPath: speed
-      value: 5
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4058921594629834845, guid: bf048b168cc39434aba3b5c4f091d425, type: 3}
+      propertyPath: endPoint
+      value: 
+      objectReference: {fileID: 1149574181}
+    - target: {fileID: 4058921594629834845, guid: bf048b168cc39434aba3b5c4f091d425, type: 3}
+      propertyPath: startPoint
+      value: 
+      objectReference: {fileID: 515036908}
+    - target: {fileID: 4058921594629834845, guid: bf048b168cc39434aba3b5c4f091d425, type: 3}
+      propertyPath: changeDirectionDelay
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4058921594629834845, guid: bf048b168cc39434aba3b5c4f091d425, type: 3}
       propertyPath: waypoints.Array.size
@@ -2615,7 +2627,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4058921594629834845, guid: bf048b168cc39434aba3b5c4f091d425, type: 3}
       propertyPath: speed
-      value: 5
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4058921594629834845, guid: bf048b168cc39434aba3b5c4f091d425, type: 3}
+      propertyPath: endPoint
+      value: 
+      objectReference: {fileID: 263912318}
+    - target: {fileID: 4058921594629834845, guid: bf048b168cc39434aba3b5c4f091d425, type: 3}
+      propertyPath: startPoint
+      value: 
+      objectReference: {fileID: 370504136}
+    - target: {fileID: 4058921594629834845, guid: bf048b168cc39434aba3b5c4f091d425, type: 3}
+      propertyPath: changeDirectionDelay
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4058921594629834845, guid: bf048b168cc39434aba3b5c4f091d425, type: 3}
       propertyPath: waypoints.Array.size

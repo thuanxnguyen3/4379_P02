@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour
     {
         CurrentStateData.toPlayState = true;
         SceneManager.LoadScene("Level01");
+        PlayerPrefs.SetInt("Score", 0);
     }
 
     //this is a big reset of the game state machine and will bring the player back to the main menu.
