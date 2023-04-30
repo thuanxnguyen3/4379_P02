@@ -8,22 +8,6 @@ public class AudioManager : MonoBehaviour
 
     AudioSource _audioSource;
 
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            // doesn't exist yet, this is now our singleton!
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-            //fill references
-            _audioSource = GetComponent<AudioSource>();
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
     public void PlaySong(AudioClip clip)
     {
         _audioSource.clip = clip;
