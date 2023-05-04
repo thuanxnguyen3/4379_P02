@@ -29,7 +29,7 @@ public class levelSelectState : GameBaseState
         {
             ExitState(game, controller);
             game.SwitchState(game.playState);
-            GameObject.Find("LevelSelectUI").transform.localPosition = Vector3.zero;
+            GameObject.Find("LevelSelectUI").transform.localPosition = new Vector3(100000,100000,0);
             controller.MainMenuUI.SetActive(false);
         }
     }

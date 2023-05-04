@@ -33,6 +33,7 @@ public class pauseState : GameBaseState
             ExitState(game, controller);
             game.SwitchState(game.menuState);
             CurrentStateData.fromPauseState = false;
+            SceneManager.LoadScene("Main");
         }
     }
 }
